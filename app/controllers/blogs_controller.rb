@@ -19,10 +19,17 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  def confirm
+    @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
+  end
+
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
+    if params[:back]
+      render :new
+    else
     respond_to do |format|
       if @blog.save
         format.html { redirect_to blog_url(@blog), notice: "Blog was successfully created." }
@@ -32,6 +39,7 @@ class BlogsController < ApplicationController
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /blogs/1 or /blogs/1.json
@@ -50,7 +58,6 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1 or /blogs/1.json
   def destroy
     @blog.destroy
-
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: "Blog was successfully destroyed." }
       format.json { head :no_content }
