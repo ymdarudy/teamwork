@@ -8,7 +8,7 @@
 
 - bundle
 
-- rails webpaker:install
+- rails webpacker:install
 
 - rails db:create
 
