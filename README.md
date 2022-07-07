@@ -1,7 +1,4 @@
 # README
-
-リモートで修正したところ
-
 ## 開発前にやってもらうこと
 
 - git clone リポジトリURL
@@ -19,5 +16,5 @@
 - localhost:300にアクセス
 you’re on railsの画面確認
 
-- git branch -c ブランチ名
+- git checkout -b ブランチ名
   ※ブランチ名は **issue/#○** の形式で
