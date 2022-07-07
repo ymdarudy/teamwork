@@ -18,3 +18,5 @@ you’re on railsの画面確認
 
 - git checkout -b ブランチ名
   ※ブランチ名は **issue/#○** の形式で
+  
+  テスト中〜〜
